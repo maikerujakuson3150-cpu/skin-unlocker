@@ -697,3 +697,5 @@ pcall(function()
 end)
 
 loadConfig()
+
+return ""
