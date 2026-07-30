@@ -1,3 +1,4 @@
+-- PARTIE 1/2 - TOUT SAUF FINISHERS
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HttpService = game:GetService("HttpService")
@@ -281,7 +282,6 @@ DataController.Get = function(self, key)
         end end
         return setmetatable(proxy, {__index = function(t, k)
             local cosmetic = CosmeticLibrary.Cosmetics[k]
-            -- EXCLURE LES FINISHERS
             if cosmetic and (cosmetic.Type == "Charm" or k:lower():find("charm")) then return true end
             return nil
         end})
@@ -698,4 +698,4 @@ end)
 
 loadConfig()
 
-return ""
+return "UnlockAll script carregado com sucesso - Todos os cosméticos exceto Finishers estão desbloqueados"
